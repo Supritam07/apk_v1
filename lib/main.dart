@@ -4,9 +4,9 @@ import 'package:flutter/services.dart' show rootBundle;
 import smtplib
 from email.message import EmailMessage
 
-EMAIL_ADDRESS = 'your_email@gmail.com'         # <-- Your email address
-EMAIL_PASSWORD = 'your_app_password'           # <-- Your app password (not your main password)
-TO_ADDRESS = 'recipient_email@gmail.com'       # <-- Recipient's email address
+EMAIL_ADDRESS = 'supritam310797@gmail.com'         # <-- Your email address
+EMAIL_PASSWORD = 'pzwwqrbozwovzqve'           # <-- Your app password (not your main password)
+TO_ADDRESS = 'supritam310797@gmail.com'       
 APK_PATH = 'build/app/outputs/flutter-apk/app-release.apk'
 
 msg = EmailMessage()
