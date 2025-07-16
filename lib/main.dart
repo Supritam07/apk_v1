@@ -58,27 +58,30 @@ class _EmojiTableScreenState extends State<EmojiTableScreen> {
                 ? Text('No data loaded.')
                 : SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: DataTable(
-                      columns: const [
-                        DataColumn(label: Text('SrNo')),
-                        DataColumn(label: Text('Emoji')),
-                        DataColumn(label: Text('Unicode')),
-                        DataColumn(label: Text('Description')),
-                      ],
-                      rows: List<DataRow>.generate(
-                        _emojiData!.length,
-                        (index) {
-                          final row = _emojiData![index];
-                          final unicode = row['Unicode'].toString();
-                          return DataRow(
-                            cells: [
-                              DataCell(Text('${index + 1}')),
-                              DataCell(Text(_unicodeToEmoji(unicode), style: TextStyle(fontSize: 24))),
-                              DataCell(Text(unicode)),
-                              DataCell(Text(row['Description'].toString())),
-                            ],
-                          );
-                        },
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      child: DataTable(
+                        columns: const [
+                          DataColumn(label: Text('SrNo')),
+                          DataColumn(label: Text('Emoji')),
+                          DataColumn(label: Text('Unicode')),
+                          DataColumn(label: Text('Description')),
+                        ],
+                        rows: List<DataRow>.generate(
+                          _emojiData!.length,
+                          (index) {
+                            final row = _emojiData![index];
+                            final unicode = row['Unicode'].toString();
+                            return DataRow(
+                              cells: [
+                                DataCell(Text('${index + 1}')),
+                                DataCell(Text(_unicodeToEmoji(unicode), style: TextStyle(fontSize: 24))),
+                                DataCell(Text(unicode)),
+                                DataCell(Text(row['Description'].toString())),
+                              ],
+                            );
+                          },
+                        ),
                       ),
                     ),
                   ),
